@@ -9,6 +9,8 @@ const cors = require('cors');
 
 const app = express();
 
+const PORT = process.env.PORT || 3001;
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -31,8 +33,8 @@ mongoose.connect(process.env.DB, { useNewUrlParser: true, useUnifiedTopology: tr
     console.log(`Conected to DB`)
 });
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server online on port ${process.env.PORT} ready to work `)
+app.listen(PORT, () => {
+    console.log(`Server online on port ${PORT} ready to work `)
 });
 
 module.exports = app;
