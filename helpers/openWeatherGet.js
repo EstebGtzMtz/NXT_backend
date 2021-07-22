@@ -1,8 +1,8 @@
 const axios = require('axios');
 
 const convertTimestamp = (sunrise, sunset) => {
-    const convertedSunrise = new Date(sunrise * 1000).toString().slice(16, 24)
-    const convertedSunset = new Date(sunset * 1000).toString().slice(16, 24)
+    const convertedSunrise = new Date(sunrise * 1000).toString().slice(16, 24).toLocaleTimeString('en-MX');
+    const convertedSunset = new Date(sunset * 1000).toString().slice(16, 24).toLocaleTimeString('en-MX');
     return { convertedSunrise, convertedSunset }
 }
 
