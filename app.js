@@ -3,13 +3,17 @@ require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const session = require('express-session');
 const passport = require('./config/passport');
 const cors = require('cors');
 
 const app = express();
 
 const PORT = process.env.PORT || 3001;
+
+const { cronToDeleteEveryFiveMinutes } = require('./helpers/cron');
+
+cronToDeleteEveryFiveMinutes();
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

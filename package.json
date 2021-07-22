@@ -21,6 +21,7 @@
         "framer-motion": "^4.1.17",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.13.2",
+        "node-cron": "^3.0.0",
         "passport": "^0.4.1",
         "passport-local-mongoose": "^6.1.0"
     }

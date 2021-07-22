@@ -57,3 +57,10 @@ exports.completedTask = async(req, res) => {
     res.status(200).json({ ok: true, msg: 'Task completed' })
 
 }
+
+exports.abortedTask = async(req, res) => {
+    const { _id } = req.params
+
+    await ToDo.findByIdAndUpdate(_id, { status: 'aborted' }, { new: true });
+    res.status(200).json({ ok: true, msg: 'Task Aborted' })
+}
