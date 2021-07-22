@@ -11,6 +11,6 @@ router.delete('/deleteTask/:_id', verifyToken, deleteToDo);
 
 router.post('/completedTask/:_id', completedTask);
 
-router.post('/abortedTask/:_id', verifyToken, abortedTask);
+router.post('/abortedTask/:_id', abortedTask);
 
 module.exports = router;
